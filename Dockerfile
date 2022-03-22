@@ -20,5 +20,5 @@ RUN apt-get update \
 
 #copy a login script 
 COPY start.sh /usr/bin/local/start.sh
-#this additional sh is required otherwise the permissions wont work on the chell file
+#this additional sh is required otherwise the permissions wont work on the shell file
 ENTRYPOINT ["sh", "/usr/bin/local/start.sh"]

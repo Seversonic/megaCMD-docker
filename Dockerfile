@@ -19,6 +19,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
 
 #copy a login script 
-COPY megalogin.sh /usr/bin/local/megalogin.sh
+COPY start.sh /usr/bin/local/start.sh
 #this additional sh is required otherwise the permissions wont work on the chell file
-ENTRYPOINT ["sh", "/usr/bin/local/megalogin.sh"]
+ENTRYPOINT ["sh", "/usr/bin/local/start.sh"]

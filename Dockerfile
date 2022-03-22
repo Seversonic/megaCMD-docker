@@ -1,4 +1,4 @@
-FROM ubuntu:groovy
+FROM ubuntu:21.10
 
 ENV email=email@example.com
 ENV password=notyourpassword
@@ -12,7 +12,7 @@ RUN apt-get update \
     ca-certificates \
     && update-ca-certificates \
     && curl  \
-    https://mega.nz/linux/MEGAsync/xUbuntu_20.10/amd64/megacmd-xUbuntu_20.10_amd64.deb \
+    https://mega.nz/linux/repo/xUbuntu_21.10/amd64/megacmd_1.5.0-9.1_amd64.deb \
     --output /tmp/megacmd.deb \
     && apt install /tmp/megacmd.deb -y \
     && apt-get clean \

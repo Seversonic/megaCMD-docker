@@ -9,6 +9,7 @@ RUN apt-get update \
     curl \
     gnupg2 \
     nano \
+	cron \
     ca-certificates \
     && update-ca-certificates \
     && curl  \
@@ -18,7 +19,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
 
-#copy a login script 
-COPY start.sh /usr/bin/local/start.sh
-#this additional sh is required otherwise the permissions wont work on the shell file
-ENTRYPOINT ["sh", "/usr/bin/local/start.sh"]
+#copy scripts over 
+COPY ./scripts/* /megacmd/scripts/
+COPY ./config/* /megacmd/config/
+
+ENTRYPOINT /megacmd/scripts/init.sh

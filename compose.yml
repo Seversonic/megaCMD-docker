@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  megacmd:
+    image: ghcr.io/megacmd-docker:latest
+    container_name: megacmd
+    environment:
+      # your mega.io login information
+      # passwords must be enclosed in single quotes (') and use an extra $ if  your password contains a $
+      # example password of:  pa$sword     would be entered as 'pas$$word'
+      - email=yourlogin@example.com
+      - password='yourpas$$word'
+    volumes:      
+      #- /yourfilestosync/:/mnt/

@@ -1,0 +1,1 @@
+xargs -rd'\n' mega-exclude -a < /megacmd/config/excludes

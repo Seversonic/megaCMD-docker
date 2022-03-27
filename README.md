@@ -1,3 +1,33 @@
 # megaCMD-docker
-docker container for syncing files with Mega
-syncs, excludes on a schedule
+docker container for syncing files with cloud storage provider Mega. Based on Ubuntu and megaCMD
+
+[Megacmd github](https://github.com/meganz/MEGAcmd)
+
+[Megacmd commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md)
+
+
+
+## Syncing
+Syncs are accomplished by adding lines to the ```syncs``` file in the `/megacmd/config`. This file should be mounted outside the container. 
+
+>*Note: that the file must use unix EOL (LF, not CR LF)*
+
+Each line represents a folder on the container and its location in Mega, separated by a space. Filepaths with spaces are not supported at this time. 
+
+Example:
+> /mnt/documents /documents
+> 
+> /mnt/pictures /media/pictures
+
+## Exclusions
+Files, and file patterns can be excludes from syncs by editing the ```excludes``` file in the ```/megacmd/config``` folder. This file should be mounted outside the container. 
+>*Note: that the file must use unix EOL (LF, not CR LF)*
+
+
+Each line is a separate exclusion, added when the container starts. Removing a pattern would require removing the line from the file and restarting the container, or manually using the command `mega-exclude -d pattern`
+
+Example:
+> *.jpg
+> 
+> *.docx~
+

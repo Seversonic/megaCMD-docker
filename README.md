@@ -12,12 +12,12 @@ Syncs are accomplished by adding lines to the ```syncs``` file in the `/megacmd/
 
 >*Note: that the file must use unix EOL (LF, not CR LF)*
 
-Each line represents a folder on the container and its location in Mega, separated by a space. Filepaths with spaces are not supported at this time. 
+Each line represents a folder on the container and its location in Mega, separated by a comma. Filepaths with spaces are untested at this time. 
 
 Example:
-> /mnt/documents /documents
+> /mnt/documents,/documents
 > 
-> /mnt/pictures /media/pictures
+> /mnt/pictures,/media/pictures
 
 ## Exclusions
 Files, and file patterns can be excludes from syncs by editing the ```excludes``` file in the ```/megacmd/config``` folder. This file should be mounted outside the container. 

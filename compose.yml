@@ -7,9 +7,10 @@ services:
     environment:
       # your mega.io login information
       # passwords must be enclosed in single quotes (') and use an extra $ if  your password contains a $
-      # example password of:  pa$sword     would be entered as 'pas$$word'
+      # example password of:  pa$sword     would be entered as 'pa$$sword', in single quotes
       - email=yourlogin@example.com
       - password='yourpas$$word'
     #volumes:
+      ## mount the config folder to place the files to sync, then mount the volumes you wish to sync in any location. 
       #- /yourpath: /megacmd/config/
       #- /yourfilestosync/:/mnt/

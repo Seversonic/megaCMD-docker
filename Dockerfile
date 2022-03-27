@@ -23,4 +23,7 @@ RUN apt-get update \
 COPY ./scripts/* /megacmd/scripts/
 COPY ./config/* /megacmd/config/
 
+#change permissions for entrypoint
+RUN chmod +x /megacmd/scripts/init.sh
+
 ENTRYPOINT /megacmd/scripts/init.sh

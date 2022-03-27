@@ -2,7 +2,7 @@ version: '3'
 
 services:
   megacmd:
-    image: ghcr.io/megacmd-docker:latest
+    image: geneparmesan/megacmd-docker:latest
     container_name: megacmd
     environment:
       # your mega.io login information

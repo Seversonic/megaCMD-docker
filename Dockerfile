@@ -6,6 +6,7 @@ ENV password=notyourpassword
 RUN apt-get update \
     && apt-get -y install \
     --no-install-recommends \
+    uuid-runtime \
     curl \
     gnupg2 \
     nano \
@@ -23,7 +24,7 @@ RUN apt-get update \
 COPY ./scripts/* /megacmd/scripts/
 COPY ./config/* /megacmd/config/
 
-#change permissions for entrypoint
-RUN chmod +x /megacmd/scripts/init.sh
+#change permissions for scripts
+RUN chmod +x /megacmd/scripts/*.sh
 
 ENTRYPOINT /megacmd/scripts/init.sh

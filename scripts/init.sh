@@ -1,4 +1,5 @@
-
+#required for mega-sync
+uuidgen > /etc/machine-id
 
 mega-login ${email} ${password}
 

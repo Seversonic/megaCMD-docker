@@ -31,3 +31,7 @@ Example:
 > 
 > *.docx~
 
+
+## Future 
+schedule the syncs to pause/resume
+

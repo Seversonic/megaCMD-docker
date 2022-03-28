@@ -14,9 +14,7 @@ on:
     tags: [ 'v*.*.*' ]
     paths-ignore:
       - '**.md'
-      - '*docker-publish.yml'
-      - './docker-publish.yml'
-      - '/docker-publish.yml'
+      - '.github/workflows/*'
   pull_request:
     branches: [ main ]
 

@@ -16,6 +16,7 @@ on:
       - '**.md'
       - '*docker-publish.yml'
       - './docker-publish.yml'
+      - '/docker-publish.yml'
   pull_request:
     branches: [ main ]
 

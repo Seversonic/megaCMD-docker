@@ -2,8 +2,8 @@ FROM ubuntu:21.10
 
 ENV email=email@example.com
 ENV password=notyourpassword
-ENV resume='0 1 * * *'
-ENV pause='0 7 * * *'
+#ENV resume='0 1 * * *'
+#ENV pause='0 7 * * *'
 
 ##install all the things
 RUN apt-get update \

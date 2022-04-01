@@ -9,7 +9,7 @@ ENV password=notyourpassword
 RUN apt-get update \
     && apt-get -y install \
     --no-install-recommends \
-    uuid-runtime \
+    #uuid-runtime \
     curl \
     gnupg2 \
     nano \
@@ -21,8 +21,8 @@ RUN apt-get update \
     --output /tmp/megacmd.deb \
     && apt install /tmp/megacmd.deb -y \
     && uuidgen > /etc/machine-id \
-    apt-get purge curl \
-    uuid-runtime \
+    # apt-get purge curl \
+    # uuid-runtime \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
 

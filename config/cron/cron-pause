@@ -1,1 +1,0 @@
-*/2 * * * * /megacmd/scripts/pause.sh >> /proc/1/fd/1

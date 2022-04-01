@@ -29,7 +29,9 @@ RUN apt-get update \
     apt-get purge curl \
     uuid-runtime \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
+    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.* \
+    && ${resume} /megacmd/scripts/resume.sh >> /proc/1/fd/1
+
 
 
 

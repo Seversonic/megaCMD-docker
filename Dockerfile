@@ -13,7 +13,7 @@ RUN apt-get update \
     curl \
     gnupg2 \
     nano \
-	cron \
+    cron \
     ca-certificates \
     && update-ca-certificates \
     && curl \

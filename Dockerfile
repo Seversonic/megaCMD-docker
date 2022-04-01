@@ -2,6 +2,8 @@ FROM ubuntu:21.10
 
 ENV email=email@example.com
 ENV password=notyourpassword
+ENV resume='0 1 * * *'
+ENV pause='0 7 * * *'
 
 ##install all the things
 RUN apt-get update \
@@ -14,7 +16,7 @@ RUN apt-get update \
 	cron \
     ca-certificates \
     && update-ca-certificates \
-    && curl  \
+    && curl \
     https://mega.nz/linux/repo/xUbuntu_21.10/amd64/megacmd_1.5.0-9.1_amd64.deb \
     --output /tmp/megacmd.deb \
     && apt install /tmp/megacmd.deb -y
@@ -31,6 +33,7 @@ RUN apt-get purge curl \
 #copy scripts over 
 COPY ./scripts/* /megacmd/scripts/
 COPY ./config/* /megacmd/config/
+COPY ./cron/* /megacmd/cron/
 
 #change permissions for scripts
 RUN chmod +x /megacmd/scripts/*.sh

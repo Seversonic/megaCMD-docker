@@ -12,9 +12,7 @@ mega-whoami
 /megacmd/scripts/sync.sh >> /proc/1/fd/1
 
 #set cron jobs
-crontab /megacmd/cron/cron-pause
-crontab /megacmd/cron/cron-resume
-cron -f
+service cron start
 
 #keep container alive
 tail -f /dev/null

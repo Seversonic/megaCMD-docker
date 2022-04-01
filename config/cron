@@ -1,0 +1,2 @@
+0 1 * * * /megacmd/scripts/resume.sh >> /proc/1/fd/1
+0 7 * * * /megacmd/scripts/pause.sh >> /proc/1/fd/1

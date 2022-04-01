@@ -3,6 +3,7 @@ FROM ubuntu:21.10
 ENV email=email@example.com
 ENV password=notyourpassword
 
+##install all the things
 RUN apt-get update \
     && apt-get -y install \
     --no-install-recommends \
@@ -16,7 +17,14 @@ RUN apt-get update \
     && curl  \
     https://mega.nz/linux/repo/xUbuntu_21.10/amd64/megacmd_1.5.0-9.1_amd64.deb \
     --output /tmp/megacmd.deb \
-    && apt install /tmp/megacmd.deb -y \
+    && apt install /tmp/megacmd.deb -y
+
+#generate uuid - needed for mega-sync command
+RUN uuidgen > /etc/machine-id
+
+#cleanup
+RUN apt-get purge curl \
+    uuid-runtime \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
 

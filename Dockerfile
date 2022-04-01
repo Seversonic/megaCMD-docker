@@ -2,8 +2,6 @@ FROM ubuntu:21.10
 
 ENV email=email@example.com
 ENV password=notyourpassword
-ENV resume='0 1 * * *'
-ENV pause='0 7 * * *'
 
 #copy scripts over 
 COPY ./scripts/* /megacmd/scripts/
@@ -29,24 +27,6 @@ RUN apt-get update \
     apt-get purge curl \
     uuid-runtime \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.* \
-    && ${resume} /megacmd/scripts/resume.sh >> /proc/1/fd/1
-
-
-
-
-#generate uuid - needed for mega-sync command
-#RUN uuidgen > /etc/machine-id \
-
-#cleanup
-#RUN apt-get purge curl \
-##    uuid-runtime \
- #   && apt-get clean \
- #   && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
-
-
-
-#change permissions for scripts
-#RUN 
+    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
 
 ENTRYPOINT /megacmd/scripts/init.sh

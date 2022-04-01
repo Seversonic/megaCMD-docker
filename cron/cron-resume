@@ -1,1 +1,0 @@
-${resume} /megacmd/scripts/resume.sh >> /proc/1/fd/1

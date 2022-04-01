@@ -6,7 +6,6 @@ ENV password=notyourpassword
 #copy scripts over 
 COPY ./scripts/* /megacmd/scripts/
 COPY ./config/* /megacmd/config/
-COPY ./cron/* /megacmd/cron/
 
 
 ##install all the things

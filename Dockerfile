@@ -6,6 +6,7 @@ ENV password=notyourpassword
 #copy scripts over 
 COPY ./scripts/* /megacmd/scripts/
 COPY ./config/* /megacmd/config/
+COPY ./config/cron /etc/cron.d/mega-cron
 
 
 ##install all the things
@@ -26,6 +27,9 @@ RUN apt-get update \
     apt-get purge curl \
     uuid-runtime \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.*
+    && rm -rf /var/lib/apt/lists/* /tmp/megacmd.* \
+    && chmod 0644 /etc/cron.d/mega-cron \
+    && crontab /etc/cron.d/mega-cron
+
 
 ENTRYPOINT /megacmd/scripts/init.sh

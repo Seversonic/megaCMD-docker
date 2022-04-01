@@ -11,14 +11,14 @@ RUN apt-get update \
     --no-install-recommends \
     #uuid-runtime \
     curl \
+    wget \
     gnupg2 \
     nano \
     cron \
     ca-certificates \
     && update-ca-certificates \
-    && curl \
+    && wget -o /tmp/megacmd.deb\
     https://mega.nz/linux/repo/xUbuntu_21.10/amd64/megacmd_1.5.0-9.1_amd64.deb \
-    --output /tmp/megacmd.deb \
     && apt install /tmp/megacmd.deb -y \
     && uuidgen > /etc/machine-id \
     # apt-get purge curl \

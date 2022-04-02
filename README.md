@@ -6,7 +6,6 @@ docker container for syncing files with cloud storage provider Mega. Based on Ub
 [Megacmd commands](https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md)
 
 
-
 ## Syncing
 Syncs are accomplished by adding lines to the ```syncs``` file in the `/megacmd/config`. This file should be mounted outside the container. 
 
@@ -32,6 +31,6 @@ Example:
 > *.docx~
 
 
-## Future 
-schedule the syncs to pause/resume
+## Cron
+A basic cron file found in the ```/megacmd/config``` can be used to schedule the pause/resume of the sync and send the output to the container logs. Edit this as neccesary for your needs. 
 

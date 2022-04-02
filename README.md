@@ -1,4 +1,6 @@
 # megaCMD-docker
+[![Build Snapshot](https://github.com/Seversonic/megaCMD-docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Seversonic/megaCMD-docker/actions/workflows/docker-publish.yml)
+
 Container for syncing files with cloud storage provider Mega. Based on Ubuntu and megaCMD.
 
 Designed for a homebuilt NAS running openmediavault. Mount files you with to sync into the container, and edit the configuration files. 

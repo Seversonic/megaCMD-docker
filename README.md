@@ -41,6 +41,8 @@ A basic cron file found in the ```/megacmd/config``` can be used to schedule the
 ## Future Features
 Add commands to PATH for easier use: pause, resume, etc
 
+Add remote ssh command capabilities
+
 Merge pause/sync scripts and use args to change function
 
 Add timezone support
